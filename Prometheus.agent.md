@@ -1,6 +1,6 @@
 ---
 description: 'Autonomous planner that writes comprehensive implementation plans and feeds them to Atlas'
-tools: ['edit', 'search', 'usages', 'problems', 'changes', 'testFailure', 'fetch', 'githubRepo', 'runSubagent']
+tools: ['edit', 'search', 'search/usages', 'read/problems', 'search/changes', 'execute/testFailure', 'web/fetch', 'web/githubRepo', 'agent']
 model: GPT-5.2 (copilot)
 handoffs:
   - label: Start implementation with Atlas

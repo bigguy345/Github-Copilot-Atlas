@@ -1,7 +1,7 @@
 ---
 description: 'Frontend/UI specialist for implementing user interfaces, styling, and responsive layouts'
 argument-hint: Implement frontend feature, component, or UI improvement
-tools: ['edit', 'search', 'runCommands', 'runTasks', 'usages', 'problems', 'changes', 'testFailure', 'fetch', 'githubRepo', 'todos']
+tools: ['edit', 'search', 'execute/getTerminalOutput', 'execute/runInTerminal', 'read/terminalLastCommand', 'read/terminalSelection', 'execute/createAndRunTask', 'search/usages', 'read/problems', 'search/changes', 'execute/testFailure', 'web/fetch', 'web/githubRepo', 'todo']
 model: Gemini 3 Pro (Preview) (copilot)
 ---
 You are a FRONTEND UI/UX ENGINEER SUBAGENT called by a parent CONDUCTOR agent (Atlas).
