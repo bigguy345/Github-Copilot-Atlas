@@ -1,0 +1,30 @@
+{
+  "name": "copilot-atlas-marketplace",
+  "owner": {
+    "name": "Copilot Atlas Contributors"
+  },
+  "metadata": {
+    "description": "Marketplace for the Copilot Atlas Claude Code plugin.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "copilot-atlas",
+      "source": "./",
+      "description": "Multi-agent planning, implementation, and review workflows for Claude Code.",
+      "author": {
+        "name": "Copilot Atlas Contributors"
+      },
+      "homepage": "https://github.com/bigguy345/Github-Copilot-Atlas",
+      "repository": "https://github.com/bigguy345/Github-Copilot-Atlas",
+      "license": "MIT",
+      "category": "development",
+      "tags": [
+        "agents",
+        "planning",
+        "review",
+        "claude-code"
+      ]
+    }
+  ]
+}
