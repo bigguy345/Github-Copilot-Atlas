@@ -1,41 +1,91 @@
 # Copilot Atlas
 
-Copilot Atlas is packaged as a Claude Code plugin with a companion marketplace so it can be installed through `/plugin`. The canonical agent definitions now live once under `agents/`; the Claude Code marketplace metadata is in `.claude-plugin/`, and the same agent catalog can also be reused for VS Code Copilot agent packaging.
+Copilot Atlas is a suite of specialized agents for planning, implementation, and review. The canonical agent definitions live under `agents/` and are supported by two installation targets:
 
-## What’s included
+- **Claude Code plugin** — installed via `/plugin` using the bundled marketplace metadata in `.claude-plugin/`
+- **VS Code GitHub Copilot plugin** — installed as an agent plugin via the Command Palette or Extensions view
 
-- **Atlas** - orchestration and phase coordination
-- **Prometheus** - research and implementation planning
-- **Oracle** - deep codebase research
-- **Explorer** - fast file and dependency discovery
-- **Sisyphus** - implementation with tests-first discipline
-- **Code Review** - review of completed changes
-- **Frontend Engineer** - UI, styling, and responsive work
+## What's included
 
-## Install from the marketplace
+| Agent | Role |
+|---|---|
+| **Atlas** | Orchestration and phase coordination |
+| **Prometheus** | Research and implementation planning |
+| **Oracle** | Deep codebase research |
+| **Explorer** | Fast file and dependency discovery |
+| **Sisyphus** | Implementation with tests-first discipline |
+| **Code Review** | Review of completed changes |
+| **Frontend Engineer** | UI, styling, and responsive work |
 
-Add the marketplace, then install the plugin:
+---
+
+## Installing in Claude Code
+
+### From the marketplace (recommended)
 
 ```text
-/plugin marketplace add <path-or-github-repo>
+/plugin marketplace add https://github.com/bigguy345/Github-Copilot-Atlas
 /plugin install copilot-atlas@copilot-atlas-marketplace
 /reload-plugins
 ```
 
-For local development, you can also load the repo directly:
+### From a local clone
 
 ```text
-claude --plugin-dir .
+git clone https://github.com/bigguy345/Github-Copilot-Atlas
+claude --plugin-dir ./Github-Copilot-Atlas
 ```
+
+### Usage in Claude Code
+
+After installation, open `/agents` to pick a specialized agent, or let Claude invoke them automatically when the task matches their specialty.
+
+---
+
+## Installing in VS Code (GitHub Copilot)
+
+VS Code supports [agent plugins](https://code.visualstudio.com/docs/copilot/customization/agent-plugins) — the easiest way to install Copilot Atlas globally across all workspaces.
+
+> **Note:** Agent plugins are currently in preview. Make sure `chat.plugins.enabled` is set to `true` in your VS Code settings.
+
+### Install from source (recommended)
+
+1. Open the Command Palette (`Ctrl+Shift+P` / `⇧⌘P`) and run **Chat: Install Plugin From Source**.
+2. Enter the repository URL:
+   ```
+   https://github.com/bigguy345/Github-Copilot-Atlas
+   ```
+3. VS Code clones and installs the plugin automatically — no manual file copying needed.
+
+### Install from the marketplace
+
+1. Open the Extensions view (`Ctrl+Shift+X` / `⇧⌘X`) and search for `@agentPlugins`.
+2. Find **Copilot Atlas** and select **Install**.
+
+### Use a local clone
+
+If you've already cloned the repo, register it via `settings.json`:
+
+```json
+"chat.pluginLocations": {
+    "/path/to/Github-Copilot-Atlas": true
+}
+```
+
+### Usage in VS Code
+
+Open the Copilot Chat panel and switch to **Agent mode**. The Atlas agents appear in the agent selector. Select the one that matches your task, or type `@Atlas` to start with the orchestrator.
+
+> **Tip:** VS Code checks for plugin updates automatically every 24 hours, or run **Extensions: Check for Extension Updates** to update manually.
+
+---
 
 ## Repository layout
 
-- `.claude-plugin/` - marketplace and plugin metadata
-- `agents/` - canonical agent definitions used by the Claude Code plugin and reusable for VS Code Copilot packaging
-
-## Usage
-
-After installation, open `/agents` in Claude Code to pick the specialized agent you want, or let Claude invoke them automatically when the task matches their specialty.
+```
+agents/                  # Canonical agent definitions (shared by both targets)
+.claude-plugin/          # Claude Code marketplace and plugin metadata
+```
 
 ## License
 
