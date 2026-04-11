@@ -1,0 +1,18 @@
+{
+  "name": "copilot-atlas",
+  "version": "1.0.0",
+  "description": "A multi-agent planning, implementation, and review plugin for Claude Code.",
+  "author": {
+    "name": "Copilot Atlas Contributors"
+  },
+  "homepage": "https://github.com/bigguy345/Github-Copilot-Atlas",
+  "repository": "https://github.com/bigguy345/Github-Copilot-Atlas",
+  "license": "MIT",
+  "keywords": [
+    "agents",
+    "planning",
+    "review",
+    "claude-code"
+  ],
+  "agents": "./agents/"
+}
